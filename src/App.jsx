@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react'
 import * as THREE from 'https://unpkg.com/three@0.164.1/build/three.module.js';
 import './App.css'
-import SceneInit from './test/Scene';
-import ModelLoader from './test/LoadModel';
+import SceneInit from './scene/Scene';
+import ModelLoader from './model/LoadModel';
 
 function Model() {
   const [sceneParams, setSceneParams] = useState(null)
@@ -44,7 +44,7 @@ function Model() {
       {sceneParams && 
         <ModelLoader 
           scene={sceneParams.scene} 
-          modelPath={'./models/Test.3dm'} 
+          modelPath={'./models/Design-Model.3dm'} 
           onLoad={setLoadedObject}
         />
       }
