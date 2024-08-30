@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import * as THREE from 'https://unpkg.com/three@0.164.1/build/three.module.js';
 import './App.css'
-import SceneInit from './scene/Scene';
+import SceneInit from './scene/SceneInit';
 import ModelLoader from './model/LoadModel';
 
 function Model() {
