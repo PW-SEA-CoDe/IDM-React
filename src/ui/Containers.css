@@ -43,3 +43,9 @@
     height: 50%;
     background-color: rgb(197, 197, 197);
 }
+
+.clicked {
+    background-color: aquamarine !important;
+    color: azure !important;
+    border-radius: 10px;
+}
