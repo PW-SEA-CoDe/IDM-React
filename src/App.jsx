@@ -3,13 +3,14 @@ import * as THREE from 'https://unpkg.com/three@0.164.1/build/three.module.js';
 import './App.css'
 import SceneInit from './scene/SceneInit';
 import Sidebar from './ui/Containers';
+import {Button} from './ui/Components'
 import ModelLoader from './model/LoadModel';
 
 
 function Model() {
   const [sceneParams, setSceneParams] = useState(null)
   const [loadedObject, setLoadedObject] = useState(null)
- 
+
   useEffect((sceneParams) => {                 
     console.log(sceneParams)          //Declares variable called in return function
     //let testMount = sceneParams.sceneContainer
@@ -43,6 +44,7 @@ function Model() {
   return (
     <>
       <Sidebar />
+      <Button />
       <SceneInit onSceneInit={setSceneParams} />
       {sceneParams && 
         <ModelLoader 

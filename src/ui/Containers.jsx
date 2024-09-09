@@ -6,8 +6,9 @@ import './Containers.css'
 function Sidebar() {
 
     function Wrapper() {
-        let testState = useRef(false)
+        let testState = useRef(false).current
         const targDiv = useRef(null)
+        const wrapperBody = useRef(null)
 
         function updateState() {
             console.log(testState)
@@ -28,13 +29,15 @@ function Sidebar() {
                 targ.current.classList.remove('clicked')
             }
         }
+
         return (
             <>
                 <div id='sb-wrapper'>
                     <div id='sb-header'>
+                        <div id='toggle'>✕</div>
                         <div id='test-button' ref={targDiv} onClick={updateState}></div>
                     </div>
-                    <div id='sb-body'></div>
+                    <div id='sb-body' ref={wrapperBody}></div>
                     <div id='sb-footer'></div>
                 </div>
             </>
