@@ -43,8 +43,9 @@ function Model() {
 
   return (
     <>
-      <Sidebar />
-      <Button />
+      <Sidebar>
+        <Button />
+      </Sidebar>
       <SceneInit onSceneInit={setSceneParams} />
       {sceneParams && 
         <ModelLoader 

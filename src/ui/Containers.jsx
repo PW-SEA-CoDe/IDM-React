@@ -3,7 +3,7 @@ import './Containers.css'
 
 
 
-function Sidebar() {
+function Sidebar({children}) {
 
     function Wrapper() {
         let testState = useRef(false).current
@@ -37,7 +37,9 @@ function Sidebar() {
                         <div id='toggle'>✕</div>
                         <div id='test-button' ref={targDiv} onClick={updateState}></div>
                     </div>
-                    <div id='sb-body' ref={wrapperBody}></div>
+                    <div id='sb-body' ref={wrapperBody}>
+                        {children}
+                    </div>
                     <div id='sb-footer'></div>
                 </div>
             </>
