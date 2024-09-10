@@ -41,6 +41,15 @@
     height: 5%;
     width: 100%;
 }
+#sb-menu {
+    position: absolute;
+    left: 15%;
+    top: 0;
+    height: 100%;
+    width: 25%;
+    background-color: rgba(35,35,35, 0.95);
+    z-index: 1;
+}
 
 #test-button {
     width: 100%;

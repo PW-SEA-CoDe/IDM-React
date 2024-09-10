@@ -43,7 +43,7 @@ function Model() {
 
   return (
     <>
-      <Sidebar>
+      <Sidebar name={'Test'}>
         <Button />
       </Sidebar>
       <SceneInit onSceneInit={setSceneParams} />

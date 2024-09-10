@@ -1,10 +1,27 @@
-import { useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import './Containers.css'
 
 
 
-function Sidebar({children}) {
+function Sidebar({children, name}) {
+    let propOne = name
+    const wrapperRef = useRef(null)
+    const [wrapperWidth, setWrapperWidth] = useState(0)
+    console.log(propOne)
 
+    useEffect(() => {
+        function updateWidth() {
+            if (wrapperRef.current) {
+                const computedWidth = wrapperRef.current.offsetWidth
+                setWrapperWidth(computedWidth)
+                const computedHeight = wrapperRef.current.offsetHeight
+                console.log(computedWidth)
+                console.log(computedHeight)
+            }
+        }
+        updateWidth()
+    })
+    console.log(wrapperWidth)
     function Wrapper() {
         let testState = useRef(false).current
         const targDiv = useRef(null)
@@ -32,7 +49,7 @@ function Sidebar({children}) {
 
         return (
             <>
-                <div id='sb-wrapper'>
+                <div id='sb-wrapper' className={propOne} ref={wrapperRef}>
                     <div id='sb-header'>
                         <div id='toggle'>✕</div>
                         <div id='test-button' ref={targDiv} onClick={updateState}></div>
@@ -42,6 +59,7 @@ function Sidebar({children}) {
                     </div>
                     <div id='sb-footer'></div>
                 </div>
+                {/*<div id='sb-menu'></div>*/}
             </>
         )
     }
